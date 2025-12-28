@@ -52,7 +52,7 @@ app.post('/create-transaction', upload.none(), async (req, res) => {
 
         axios.request(options).then(function (response) {
 
-            console.log(response.data);
+            
             res.json({ transaction_id: response.data.id, qrcode_text: response.data.pix.qrcode, ok: true });
         }).catch(function (error) {
             console.error(error);
@@ -75,7 +75,7 @@ app.get('/checkPayment/:id', async (req, res) => {
             }
         })
 
-        console.log(response.data.status)
+       
         const status = response.data.status
         
 
